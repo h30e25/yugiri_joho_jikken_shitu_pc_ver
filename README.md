@@ -1,0 +1,1 @@
+# yugiri_joho_jikken_shitu_pc_ver
