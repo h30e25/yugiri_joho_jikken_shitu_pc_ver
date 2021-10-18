@@ -1,1 +1,2 @@
-# yugiri_joho_jikken_shitu_pc_ver
+# Yugiri_Simulator
+ E4実験　湯切りシュミュレータ

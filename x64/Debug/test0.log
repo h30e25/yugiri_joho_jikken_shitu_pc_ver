@@ -1,0 +1,34 @@
+﻿  Game.cpp
+D:\yugiri_only_for_myself-main\Game.cpp(100,12): warning C4244: '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+D:\yugiri_only_for_myself-main\Game.cpp(101,12): warning C4244: '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+Main.obj : error LNK2005: "int __cdecl ERS_BaudRate(int,int)" (?ERS_BaudRate@@YAHHH@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_CheckRecv(int)" (?ERS_CheckRecv@@YAHH@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_CheckSend(int)" (?ERS_CheckSend@@YAHH@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_ClearRecv(int)" (?ERS_ClearRecv@@YAHH@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_ClearSend(int)" (?ERS_ClearSend@@YAHH@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_Close(int)" (?ERS_Close@@YAHH@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "void __cdecl ERS_CloseAll(void)" (?ERS_CloseAll@@YAXXZ) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_Config(int,unsigned int)" (?ERS_Config@@YAHHI@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_ConfigDialog(int)" (?ERS_ConfigDialog@@YAHH@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_Getc(int)" (?ERS_Getc@@YAHH@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_Gets(int,char *,int)" (?ERS_Gets@@YAHHPEADH@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_Open(int,int,int)" (?ERS_Open@@YAHHHH@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_Printf(int,char *,...)" (?ERS_Printf@@YAHHPEADZZ) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_Putc(int,int)" (?ERS_Putc@@YAHHH@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_Puts(int,char *)" (?ERS_Puts@@YAHHPEAD@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_Recv(int,void *,int)" (?ERS_Recv@@YAHHPEAXH@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_RecvTimeOut(int,int)" (?ERS_RecvTimeOut@@YAHHH@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_Send(int,void *,int)" (?ERS_Send@@YAHHPEAXH@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_SendTimeOut(int,int)" (?ERS_SendTimeOut@@YAHHH@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_Sends(int,char *)" (?ERS_Sends@@YAHHPEAD@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "wchar_t __cdecl ERS_WGetc(int)" (?ERS_WGetc@@YA_WH@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_WGets(int,wchar_t *,int)" (?ERS_WGets@@YAHHPEA_WH@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_WPrintf(int,wchar_t *,...)" (?ERS_WPrintf@@YAHHPEA_WZZ) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_WPutc(int,wchar_t)" (?ERS_WPutc@@YAHH_W@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_WPuts(int,wchar_t *)" (?ERS_WPuts@@YAHHPEA_W@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_WSends(int,wchar_t *)" (?ERS_WSends@@YAHHPEA_W@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ERS_XoffXon(int,int,int)" (?ERS_XoffXon@@YAHHHH@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int __cdecl ers_check(int)" (?ers_check@@YAHH@Z) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "int * ers_initdone" (?ers_initdone@@3PAHA) は既に Game.obj で定義されています。
+Main.obj : error LNK2005: "void * * ers_hcom" (?ers_hcom@@3PAPEAXA) は既に Game.obj で定義されています。
+D:\yugiri_only_for_myself-main\x64\Debug\test0.exe : fatal error LNK1169: 1 つ以上の複数回定義されているシンボルが見つかりました。
