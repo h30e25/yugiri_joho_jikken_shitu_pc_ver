@@ -12,11 +12,18 @@ static int cr1 = GetColor(255, 255, 255);
 void Score_Update() {
     ScoreV_Update();
     //sleep(100);
+
+    /*
     if (CheckHitKey(KEY_INPUT_RETURN) != 0) { //エンターキーが押されていたら
         SceneChangeFlag_Forbid();
         AllPlayData_Update();
         Enter_Sound();
         SceneMgr_ChangeScene(eScene_Ranking);//シーンをランキングに変更
+    }    
+    */
+
+    if (get_buf() == 'a') {
+        SceneMgr_ChangeScene(eScene_Ranking);
     }
 }
 

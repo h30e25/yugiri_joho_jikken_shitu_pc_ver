@@ -4,6 +4,8 @@
 #include <chrono>
 #include <thread>
 #include "SerialClass.h"
+#include "erslib19.h" //シリアル通信を簡単にしてくれるヘッダファイル
+
 
 //using std::this_thread::sleep_for;
 
@@ -17,11 +19,19 @@ static SaveData allPlayData[100] = {};
 
 static int playDataNumber = 0; //allPlayDataの要素数を管理する変数
 
+#define BUFSIZE 5000
+static int com = 1;
+static char buf[1000];
+static int r;
+
 /*
 void sleep(int ms) {
 	sleep_for(std::chrono::milliseconds(ms));
 }
 */
+
+static int yello = GetColor(255, 241, 0);
+
 
 void timer(int second) {
     int timediff = 1;
@@ -175,4 +185,27 @@ void File_Output() {
     FILE* fp = fopen("savedata.dat", "wb");//バイナリファイルを開く
     fwrite(&currentPlayData, sizeof(SaveData), sizeof(currentPlayData) / sizeof(currentPlayData), fp); // SaveData_t構造体の中身を出力
     fclose(fp);
+}
+
+
+
+void serial_initialize() {
+    r = ERS_Open(com, BUFSIZE, BUFSIZE);    // rs232cのポートをオープンする
+    ERS_Config(com, ERS_9600);		// 通信速度を9600bpsにする(デフォルト)
+}
+
+
+char get_buf() {
+    DrawString(200, 100, "get_buf関数実行中", yello);
+    if (ERS_CheckRecv(com) > 0) {  // シリアル通信の受信データあり
+        r = ERS_Recv(com, buf, 1);
+        DrawString(200, 100, "受信データあり", yello);
+        return(buf[0]);
+    } else {
+        return('z');
+    }
+}
+
+void print_test() {
+    DrawString(200, 100, "print_test", yello);
 }

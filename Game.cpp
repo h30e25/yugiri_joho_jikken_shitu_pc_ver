@@ -4,7 +4,7 @@
 #include "WaterMeter.h"
 #include <math.h>
 #include "DxLib.h"
-#include "erslib19.h" //シリアル通信を簡単にしてくれるヘッダファイル
+// #include "erslib19.h" //シリアル通信を簡単にしてくれるヘッダファイル
 
 /*
 #include <iostream>
@@ -26,15 +26,21 @@ static int logo_image;
 static int count = 0;
 
 //シリアル通信のために必須な変数4つ
+/*
 #define BUFSIZE 5000
 static int com = 5;
 static char buf[1000];
 static int r;
+*/
+
 
 //シリアル通信を行うための準備と画像読み込み
 void Game_Initialize() {
+    /*
     r = ERS_Open(com, BUFSIZE, BUFSIZE);    // rs232cのポートをオープンする
-    ERS_Config(com, ERS_9600);		// 通信速度を9600bpsにする(デフォルト)
+    ERS_Config(com, ERS_9600);		// 通信速度を9600bpsにする(デフォルト)    
+    */
+
 
     tebo_image = LoadGraph("images/いらすとや_てぼ.png");
     hirazaru_image = LoadGraph("images/はいむ_ひらざる.jpg");
@@ -43,7 +49,7 @@ void Game_Initialize() {
 
 void Game_Update() {
     Time_Update();
-
+    /*
     if (ERS_CheckRecv(com) > 0) {  // シリアル通信の受信データあり
         DrawString(200, 100, "受信データあり", cr);
         r = ERS_Recv(com, buf, 1);
@@ -67,7 +73,11 @@ void Game_Update() {
             water -= 10;
             break;
         }
-    }
+    }    
+    */
+
+    
+
     if (CheckHitKey(KEY_INPUT_ESCAPE) == 1) {
         water -= 1;
     }

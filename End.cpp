@@ -5,6 +5,7 @@
 
 //更新
 void End_Update() {
+    /*
     if (CheckHitKey(KEY_INPUT_RETURN) == 0 && SceneChangeFlag_Get() == 0) {
         SceneChangeFlag_Allow();
     }
@@ -12,7 +13,13 @@ void End_Update() {
         SceneChangeFlag_Forbid();
         Enter_Sound();
         SceneMgr_ChangeScene(eScene_Menu);//シーンをメニューに変更
+    }    
+    */
+
+    if (get_buf() == 'a') {
+        SceneMgr_ChangeScene(eScene_Menu);
     }
+
 }
 
 //描画

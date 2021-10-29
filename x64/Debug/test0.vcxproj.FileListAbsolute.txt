@@ -1,0 +1,2 @@
+D:\yugiri_only_for_myself-main\x64\Debug\test0.exe
+D:\yugiri_only_for_myself-main\x64\Debug\test0.pdb

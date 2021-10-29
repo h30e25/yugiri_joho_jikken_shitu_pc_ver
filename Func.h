@@ -47,3 +47,9 @@ void Enter_Sound();
 int sensor1();
 
 void Opening_Sound();
+
+
+void serial_initialize();
+char get_buf();
+
+void print_test();

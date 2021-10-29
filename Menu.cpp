@@ -30,7 +30,10 @@ void Menu_Update() {
     }
     if (Keyboard_Get(KEY_INPUT_UP) == 1) {//上キーが押されていたら
         NowSelect = (NowSelect + (eMenu_Num - 1)) % eMenu_Num;//選択状態を一つ上げる
-    }
+    }       
+    print_test();
+ 
+
     if (Keyboard_Get(KEY_INPUT_RETURN) == 1) {//エンターキーが押されたら
         switch (NowSelect) {//現在選択中の状態によって処理を分岐
         case eMenu_TEBO:

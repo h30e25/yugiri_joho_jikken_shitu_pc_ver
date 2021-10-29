@@ -6,6 +6,7 @@
 
 void Ranking_Update() {
     //sleep(100);
+    /*
     if (CheckHitKey(KEY_INPUT_RETURN) == 0 && SceneChangeFlag_Get() == 0) {
         SceneChangeFlag_Allow();
     }
@@ -13,7 +14,12 @@ void Ranking_Update() {
         SceneChangeFlag_Forbid();
         Enter_Sound();
         SceneMgr_ChangeScene(eScene_End);//シーンを終了画面に変更
+    }    
+    */
+    if (get_buf() == 'a') {
+        SceneMgr_ChangeScene(eScene_End);
     }
+
 }
 
 //描画
