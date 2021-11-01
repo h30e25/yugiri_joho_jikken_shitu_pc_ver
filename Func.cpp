@@ -20,9 +20,19 @@ static SaveData allPlayData[100] = {};
 static int playDataNumber = 0; //allPlayDataの要素数を管理する変数
 
 #define BUFSIZE 5000
-static int com = 1;
-static char buf[1000];
-static int r;
+
+static int com_h8maikon = 1;
+static char buf_h8maikon[1000];
+static int r_h8maikon;
+
+static int com_shogeki_tebo = 6;
+static int buf_shogeki_tebo[1000];
+static int r_shogeki_tebo;
+
+static int com_shogeki_hira = 7;
+static int buf_shogeki_hira[1000];
+static int r_shogeki_hira;
+static char buf_current_equipment[1000];
 
 /*
 void sleep(int ms) {
@@ -190,20 +200,58 @@ void File_Output() {
 
 
 void serial_initialize() {
-    r = ERS_Open(com, BUFSIZE, BUFSIZE);    // rs232cのポートをオープンする
-    ERS_Config(com, ERS_9600);		// 通信速度を9600bpsにする(デフォルト)
+    r_h8maikon = ERS_Open(com_h8maikon, BUFSIZE, BUFSIZE);    // rs232cのポートをオープンする
+    ERS_Config(com_h8maikon, ERS_9600);		// 通信速度を9600bpsにする(デフォルト)
+
+    r_shogeki_tebo = ERS_Open(com_shogeki_tebo, BUFSIZE, BUFSIZE);
+    ERS_Config(com_shogeki_tebo, ERS_9600);
+
+    r_shogeki_hira = ERS_Open(com_shogeki_hira, BUFSIZE, BUFSIZE);
+    ERS_Config(com_shogeki_hira, ERS_9600);
 }
 
 
-char get_buf() {
-    DrawString(200, 100, "get_buf関数実行中", yello);
-    if (ERS_CheckRecv(com) > 0) {  // シリアル通信の受信データあり
-        r = ERS_Recv(com, buf, 1);
+char get_buf_h8maikon() {
+    DrawString(200, 100, "get_buf_h8maikon関数実行中", yello);
+    if (ERS_CheckRecv(com_h8maikon) > 0) {  // シリアル通信の受信データあり
+        r_h8maikon = ERS_Recv(com_h8maikon, buf_h8maikon, 1);
         DrawString(200, 100, "受信データあり", yello);
-        return(buf[0]);
+        return(buf_h8maikon[0]);
     } else {
         return('z');
     }
+}
+
+char get_buf_shogeki() {
+    DrawString(200, 100, "get_buf_shogeki関数実行中", yello);
+    switch (currentPlayData.equipment) {
+    case tebo:
+        if (ERS_CheckRecv(com_shogeki_tebo) > 0) {  // シリアル通信の受信データあり
+            r_shogeki_tebo = ERS_Recv(com_shogeki_tebo, buf_shogeki_tebo, 1);
+            r_shogeki_tebo = ERS_Send(com_shogeki_tebo, buf_shogeki_tebo, 1);
+            DrawString(200, 100, "受信データあり", yello);
+            return(buf_shogeki_tebo[0]);
+        }        
+        break;
+    case hirazaru:
+        if (ERS_CheckRecv(com_shogeki_hira) > 0) {  // シリアル通信の受信データあり
+            r_shogeki_hira = ERS_Recv(com_shogeki_hira, buf_shogeki_hira, 1);
+            r_shogeki_hira = ERS_Send(com_shogeki_hira, buf_shogeki_hira, 1);
+            DrawString(200, 100, "受信データあり", yello);
+            return(buf_shogeki_hira[0]);
+        }
+        break;
+    default:
+        return('z');
+    }
+    
+}
+
+void send_current_equipment() {
+    buf_current_equipment[0] = 't';
+    r_shogeki_tebo = ERS_Send(com_shogeki_tebo, buf_current_equipment, 1);
+    buf_current_equipment[0] = 't';
+
 }
 
 void print_test() {

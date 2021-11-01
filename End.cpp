@@ -16,7 +16,7 @@ void End_Update() {
     }    
     */
 
-    if (get_buf() == 'a') {
+    if (get_buf_h8maikon() == 'a') {
         SceneMgr_ChangeScene(eScene_Menu);
     }
 

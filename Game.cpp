@@ -45,6 +45,7 @@ void Game_Initialize() {
     tebo_image = LoadGraph("images/‚¢‚ç‚·‚Æ‚â_‚Ä‚Ú.png");
     hirazaru_image = LoadGraph("images/‚Í‚¢‚Þ_‚Ð‚ç‚´‚é.jpg");
     logo_image = LoadGraph("images/fcac755457d6a1c96093e16707ad773c_t.jpeg");
+    send_current_equipment();
 }
 
 void Game_Update() {
@@ -73,8 +74,21 @@ void Game_Update() {
             water -= 10;
             break;
         }
-    }    
+    }
+    
     */
+    switch (get_buf_shogeki()) {
+    case 'l':
+        water -= 1;
+        break;
+    case 'm':
+        water -= 5;
+        break;
+    case 'h':
+        water -= 10;
+        break;
+    }
+
 
     
 

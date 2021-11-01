@@ -22,7 +22,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
     ChangeWindowMode(FALSE), DxLib_Init(), SetDrawScreen(DX_SCREEN_BACK);
     serial_initialize();
-    //Game_Initialize(); //シリアル通信の準備    
+    Game_Initialize(); //シリアル通信の準備    
 
     Sound_Initialize(); //サウンド読み込み（いつでも使える状態にしておく）
     Opening_Sound();

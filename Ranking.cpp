@@ -16,7 +16,7 @@ void Ranking_Update() {
         SceneMgr_ChangeScene(eScene_End);//シーンを終了画面に変更
     }    
     */
-    if (get_buf() == 'a') {
+    if (get_buf_h8maikon() == 'a') {
         SceneMgr_ChangeScene(eScene_End);
     }
 

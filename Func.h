@@ -50,6 +50,9 @@ void Opening_Sound();
 
 
 void serial_initialize();
-char get_buf();
+char get_buf_h8maikon();
+char get_buf_shogeki();
+void send_current_equipment();
+
 
 void print_test();
