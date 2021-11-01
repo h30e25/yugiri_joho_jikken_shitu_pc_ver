@@ -25,13 +25,14 @@ static int com_h8maikon = 1;
 static char buf_h8maikon[1000];
 static int r_h8maikon;
 
-static int com_shogeki_tebo = 6;
-static int buf_shogeki_tebo[1000];
+static int com_shogeki_tebo = 7;
+static char buf_shogeki_tebo[1000];
 static int r_shogeki_tebo;
 
-static int com_shogeki_hira = 7;
-static int buf_shogeki_hira[1000];
+static int com_shogeki_hira = 6;
+static char buf_shogeki_hira[1000];
 static int r_shogeki_hira;
+
 static char buf_current_equipment[1000];
 
 /*
@@ -228,7 +229,6 @@ char get_buf_shogeki() {
     case tebo:
         if (ERS_CheckRecv(com_shogeki_tebo) > 0) {  // シリアル通信の受信データあり
             r_shogeki_tebo = ERS_Recv(com_shogeki_tebo, buf_shogeki_tebo, 1);
-            r_shogeki_tebo = ERS_Send(com_shogeki_tebo, buf_shogeki_tebo, 1);
             DrawString(200, 100, "受信データあり", yello);
             return(buf_shogeki_tebo[0]);
         }        
@@ -236,7 +236,6 @@ char get_buf_shogeki() {
     case hirazaru:
         if (ERS_CheckRecv(com_shogeki_hira) > 0) {  // シリアル通信の受信データあり
             r_shogeki_hira = ERS_Recv(com_shogeki_hira, buf_shogeki_hira, 1);
-            r_shogeki_hira = ERS_Send(com_shogeki_hira, buf_shogeki_hira, 1);
             DrawString(200, 100, "受信データあり", yello);
             return(buf_shogeki_hira[0]);
         }

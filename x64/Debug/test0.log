@@ -1,3 +1,3 @@
-﻿  Main.cpp
-D:\yugiri_only_for_myself-main\Main.cpp(21,9): warning C4101: 'MouseInput': ローカル変数は 1 度も使われていません。
+﻿  Func.cpp
+D:\yugiri_only_for_myself-main\Func.cpp(247): warning C4715: 'get_buf_shogeki': 値を返さないコントロール パスがあります。
   test0.vcxproj -> D:\yugiri_only_for_myself-main\x64\Debug\test0.exe

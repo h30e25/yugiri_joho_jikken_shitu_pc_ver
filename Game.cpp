@@ -115,7 +115,7 @@ void Game_Draw() {
     DrawFormatString(500, 400, cr, "…•ª—Ê: %d", water);
     WaterMeter_Sound(water);
 
-    UseEquipment_MoveDraw(100, 100, 0, 50, 10);
+    //UseEquipment_MoveDraw(100, 100, 0, 50, 10);
     Time_Draw(0, 60, cr);
     count++;
 }
